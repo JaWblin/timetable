@@ -2,13 +2,21 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>학교 시간표</title>
     <style>
-        /* 화면에 여백을 없애고 꽉 채우는 설정 */
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #f5f5f5; }
+        /* html과 body가 스마트폰 화면 크기를 절대 벗어나지 못하도록 고정 */
+        html, body { 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: hidden; 
+            background-color: #ffffff;
+            -webkit-text-size-adjust: none; /* 아이폰 글자 크기 강제 확대 방지 */
+        }
         
-        /* 상단 배너 50px만 완벽하게 밀어 올리고 화면 비율은 1:1을 유지하는 마법의 코드 */
+        /* 배너 50px을 정확히 위로 밀고, 비율이 깨지지 않게 화면 안에 가두는 설정 */
         iframe { 
             width: 100%; 
             height: calc(100% + 50px); 
@@ -16,6 +24,9 @@
             position: absolute; 
             top: -50px; 
             left: 0;
+            /* 아래 속성들이 모바일 브라우저 안에서 완벽한 1:1 비율을 유지하게 만듭니다 */
+            box-sizing: border-box;
+            -webkit-overflow-scrolling: touch; 
         }
     </style>
 </head>
