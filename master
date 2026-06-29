@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>스마트 학교 통합 마스터 일과시간표 시스템</title>
+    <style>
+        /* 시스템 뷰포트 고정 및 스크롤 체이닝 차단 방어선 구성 */
+        html, body { 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: hidden; 
+            background-color: #ffffff;
+            -webkit-text-size-adjust: none;
+        }
+        
+        /* * [하단 기업용 워닝 배너 강제 마스킹 오프셋 아키텍처]
+         * 구글 앱스크립트 배너 프레임 높이 50px을 정확히 위로 밀어올린 후 
+         * 뷰포트의 유효 가용 높이를 50px 더해 하단 구석으로 밀어내 숨김 처리합니다.
+         */
+        iframe { 
+            width: 100%; 
+            height: calc(100% + 50px); 
+            border: none; 
+            position: absolute; 
+            top: -50px; 
+            left: 0;
+            box-sizing: border-box;
+            -webkit-overflow-scrolling: touch; 
+        }
+    </style>
+</head>
+<body>
+    <!-- 배너 오프셋 보상 영역 내부에 타겟 웹 앱 스크립트 실행 서브 도메인을 마운트합니다. -->
+    <iframe src="https://script.google.com/macros/s/AKfycbzx4xLlpG9MmQzaquIWCNv4NUSP6sKox6sg2FHVxbXkvByGxWRS6IVx2g7ldDaKeIjATA/exec"></iframe>
+</body>
+</html>
